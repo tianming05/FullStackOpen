@@ -1,0 +1,13 @@
+# user goes to the single page app version of the notes app at https://studies.cs.helsinki.fi/exampleapp/spa
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/spa
+# Server creates a new note based on the content of the POST request. 
+server-->browser: HTML-code (302), spa.html
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: HTML-code (200) main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+server-->browser: HTML code (200), spa.js
+# Browser starts executing js code that requests JSON data from server
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: HTML-code (200) data.json
+# Browser executes the event handler that renders notes to display

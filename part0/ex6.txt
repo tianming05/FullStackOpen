@@ -1,0 +1,6 @@
+# User writes a note then clicks submit button
+# Browser appends the new note into the list of notes.
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/notes
+# Server creates a new note based on the content of the POST request. 
+server-->browser: HTML-code (201 created)
+# Browser stays on the same page

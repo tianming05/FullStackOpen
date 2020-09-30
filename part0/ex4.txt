@@ -1,0 +1,15 @@
+Click submit button
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/notes
+# Server creates a new note based on the content of the POST request. 
+server-->browser: HTML-code (302 created)
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML code (200), note.html
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: HTML-code (200), main.js
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: HTML-code (200), main.css
+# Browser starts executing js code that requests JSON data from server
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: HTML-code (200), data.json
+# Browser executes the event handler that renders notes to display
